@@ -31,7 +31,7 @@ const makeVault = (overrides: Partial<Vault> = {}): Vault => ({
 })
 
 const tokenFor = (sub: string, role: UserRole.USER | UserRole.VERIFIER | UserRole.ADMIN) =>
-  `Bearer ${signToken({ sub, role })}`
+  `Bearer ${signToken({ userId: sub, role })}`
 
 beforeEach(() => {
   setVaults([])
